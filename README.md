@@ -1,6 +1,6 @@
 # About Myself:
 
-!D:\New Desktop on Hard drive\CS Stuff\Web Dev\Web Dev Notes Repo\Web-Dev-Notes\images
+!(D:\New Desktop on Hard drive\CS Stuff\Web Dev\Web Dev Notes Repo\Web-Dev-Notes\images)
 
 My name is Erin Jones. I’m a sophomore year computer science major. My computer experience mostly started in college, but before that I had an interest in tinkering with computers. It started out with things like homebrewing my childhood Wii and 3DS when I was younger, and messing with emulation, but the only formal learning I’ve had has been in college. So far I’ve taken CS1, CS2, CS3, and Assembly Language. The only projects I have done so far have been in assembly language; there we made compilers that interpreted machine code and ran it, a compiler that took in an assembly language file and compiled it into machine code, and a program that linked multiple assembly language files together and ran them. Working on projects is something I want to do a lot more of, but finding personal projects to start has been a bit hard so far.
 
