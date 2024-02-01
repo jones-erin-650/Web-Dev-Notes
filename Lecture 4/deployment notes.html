@@ -1,0 +1,33 @@
+<!-- 
+Empty folders will never get pushed to git. Git does not exactly work with files as we expect. 
+- To add an empty file you call it .gitinclude. 
+- When you move a file from one folder to another git sees it as deleting one file and making another with a different location
+
+Dunno where to put this: .gitignore stuff
+- having node modules in a git file is a big nono appearently. specifically like in the .gitignore
+- with the git ignore file you can say that "i don't want anything in this folder, except this file, etc"
+- mainly going to be using node, vue, typescript, vs code. all should go in the gitignore template you can create from https://www.toptal.com/developers/gitignore
+
+Github Actions/ continuous integration continuous deployment:
+- lots of computers and pieces go into developing a website. there's the server that hosts the files, the api servers, your persoal development machine
+- on that machine you develop, compile, unit test occasionally. when you do this all on a local computer, how do you get the results to go where they should be?
+- currently the idea is continuous integration and deployment. if it works, release it.
+- how do you handle the integration and deployment?
+    - push code to the webserver? 
+    - github actions is one of these framworks to handle deployment
+    - whenever you push something to a particular branch, or do anything, you can have github do an action
+    - it'll spin up a virtual machine for you, run your pipeline, run your action, then move on to the next thing
+    - jeckyl and static html
+        - jeckyl is made to take your markdown files and make a website out of it
+        - static html creates a script (scripting language is yml, yet another markdown language)
+            - worthwhile to learn yml
+            - anything that's in this yml file from static html is a github action. the moment you save it, github processes it and creates the action off of it
+            format
+                - name
+                - runs on (ie runs whenever theres a push to this branch)
+                - jobs
+                    - the steps that your actions are going to take
+                    - the job has steps, like compile then deploy, just what you want it to do
+                    - environment variables
+                    - pages, where we deploy the changes (?)
+-->
