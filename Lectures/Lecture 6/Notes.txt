@@ -1,0 +1,7 @@
+Frameworks we'll be using: vue
+- used to avoid spaghetti code by using proven framworks that work
+- making lots of small bits of software that do one thing really well
+- model vue controller
+    - if you take any computer programming, you can break it into individual components
+    - isolating it like that let's you test them and work on them on their own without interfering with other parts
+    
