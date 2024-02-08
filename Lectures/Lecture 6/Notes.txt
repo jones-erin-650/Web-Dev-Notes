@@ -16,4 +16,38 @@ Frameworks we'll be using: vue
         - abstract representation of what the user is seeing and interacting with
             - the vue is always matching the vue model
             - in all of these systems you never actually change the vue with your code, your javascript code only changes javascript, the vue just sees that
+    - using vue allows you to prograssively introduce things (i think)
+    - vue is now on version 3
+        - giant change between 2 and 3
+        - used to only be one way to write vue code
+        - now there's composition api
+            - everything in this class must be done in the composition api
+            - options api is still used but more about backwards compatibility
+            - we should be able to recognize what's options api and what's composition
+    - javascript things
+        - does not have the concept of modules
+        - the developers did not think it would be used like that
+        - you can have multiple javascript files per html file
+        - when the html gets to the javascript command to run the script, it runs the script and makes any variable inside the function in the global script
+            - starts executing it top down
+            - if you try using a variable you declared later you'll get an error cause it hasn't gotten to that variable yet
+            - this is completely unmaintainable
+                - if we use the same name for different variables on different files things fuck up a lot
+                - we can't do that
+                - jquery and mutools both use the dollar sign, if you use them both html will explode
+                - everything is in the same scope
+            - when you have a module, that module has to export certain elements from it, the calling module needs to take what it wants from there and use it
+                - there needs to be some sort of vocabulary for that. this is the module system
+        - vue is giving us directions to use vue using global and es module builds
+            - vue makes one variable called vue
+            - doesn't ahve a single other global variable or function, everything just becomes a property of vue
+            - compiled for esm cause it exports the variables and things you need
+ref and 
+- <!-- vue events are preceeded by an @ -->
+- <!-- we're gonna be using reactive and ref all the time -->
+- <!-- we're not watching a variable, we're watching the properties of a variable and whether they change -->
+- because if the value of the variable changes, then the variable we were watching is gone and replaced
+    - this way we look at properties?
+- in the vue example file
+    - we never actually change the showAlert variable, we just change a property of it that hides the alert
          
