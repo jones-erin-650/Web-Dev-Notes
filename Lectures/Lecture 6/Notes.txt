@@ -50,4 +50,5 @@ ref and
     - this way we look at properties?
 - in the vue example file
     - we never actually change the showAlert variable, we just change a property of it that hides the alert
+    - never actually change the html directly
          
