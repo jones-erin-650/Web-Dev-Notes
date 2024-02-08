@@ -1,4 +1,3 @@
-<!-- 
 Empty folders will never get pushed to git. Git does not exactly work with files as we expect. 
 - To add an empty file you call it .gitinclude. 
 - When you move a file from one folder to another git sees it as deleting one file and making another with a different location
@@ -35,4 +34,3 @@ Open the website where you set up your pages
 - site is live on github, settings, pages, then you can open the link. you can set up one as the default on your account, etc
 - see this one goes to your github name, then you need to put the rest of the thing in the url to get to the file you want. 
 - tonight we're supposed to give the deployment url and the render url
--->

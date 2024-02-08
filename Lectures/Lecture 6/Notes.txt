@@ -4,4 +4,16 @@ Frameworks we'll be using: vue
 - model vue controller
     - if you take any computer programming, you can break it into individual components
     - isolating it like that let's you test them and work on them on their own without interfering with other parts
-    
+- mv*
+    - any mvc type pattern
+    - vue model pattern
+        - mvvm pattern
+        - made famous by microsoft when they made a framework for coding in C# and they popularized it
+        - model is the abstract concept of the app we're working with
+        - the vue model is an abstract, javascript only, repressentation of what the ui is
+            - if the user is looking at it, that's the model, if they're interacting with it then that's the controller, (the development is vue)?
+        - vue comes on top of that
+        - abstract representation of what the user is seeing and interacting with
+            - the vue is always matching the vue model
+            - in all of these systems you never actually change the vue with your code, your javascript code only changes javascript, the vue just sees that
+         

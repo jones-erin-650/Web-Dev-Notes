@@ -1,4 +1,3 @@
-<!--  
 Javascript
 - not related to java, just has a similar name
 - more closely related to python
@@ -30,5 +29,3 @@ misc
 - biggest optimization with web server programming you can make is lowering the amount of time it takes to get information from one 
   system to another
 - cvn
-    - 
--->
