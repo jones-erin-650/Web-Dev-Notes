@@ -1,0 +1,66 @@
+what kind of computers do you need to run a website?
+- database
+    - interfaces with the application server
+- third party APIs
+    - multiple third party apis working with the application server
+- a server
+    - file hosting, index files
+    - one big server containing everything
+    - to host our client side code
+        - hosts out files themselves
+        - like github pages or render
+    - two coexisting things
+        - web server
+            - not much programming goes into here
+        - application server api is here
+            - most of the programming goes into here
+            - this interfaces with the database
+            - backend code is here
+            - more pieces than just front end and back end
+- client browser
+    - all the html, js, css, vue, everything
+    - web server has everything that gets downloaded to the client and gets run on the browser
+        - goes through cdn caching first
+- development machine
+    - has a smaller version of the database in it
+        - which is connected to the application server, which is connected to the client browser
+    - IDE
+    - build tools
+    - package management
+    - always using javascript with these when it comes to javascript
+
+what is node?
+- people realized that javascript is becoming a stronger language and being used for other things
+- so why does it need to be run on the browser?
+    - so they split it into a bunch of different components
+        - the render engine, http components, javascript runtimes
+    - the javascript run time is its seperate component that works in the browser
+        - now it's not tied into the browser
+        - we have this java script runtime, wouldn't it be great to ahve it as a scripting language and run it whenever
+- node can run anywhere
+
+npm
+- projects are classified with their own package.json file
+- we will have two package.json files, which means we'll have two node modules folders
+- the root is the root of our server program, the actual code will live in a folder called server
+- the client will be entirely contained in the client folder
+- use "npm init" in the terminal so you don't have to make a json file from scratch
+- json files
+    - javascript object notation
+    - property names must be quoted (that's not done in javascript)
+    - objects with properties, strings, numbers, arrays, all that shit
+    - all of the scripts go in the script thing (really)
+    this is the center of all npm
+- running
+    - scripts in the package.json file you can run the javascript with "npm run [script name]" and that runs the specified thing in the server folder
+    - in the server folder, you can just run the javascript as normal with "node [file location]"
+
+semvr
+- semantic versioning
+- we have three main numbers, major, minor, bug fix
+    - ie: 4.17.1
+    - if you add a feature, the minor version adds a +1, and the bug fix number goes back to 0
+    - so when you're using something in an application, what happens when they make a bug fix? do you incorporate that?
+    - in the json files they dependencies thing means what version you wants
+        - ~ give me any 4.17 that's greater than one
+        - * give me at least this version (?)
