@@ -1,0 +1,41 @@
+Node
+- essentially a way to run javascript outside of a browser
+- run java script from your computer
+- core libraries
+    - good at network communication
+    - great platform for programming network applications
+    - it's core concept is that the entire program that run nodes and any code inside node is actually single threaded, only one thread allowed in node
+        - cpus have multiple cores built in, like it can do 4-8-16 things at the same time
+        - so node does one thing at a time, and nothing can block that one thread
+- node doesn't accept the request individually, it usually uses another server that handles requests and node processes it
+- when you want to handle multiple requests, it keeps the same computer and just gets like 2 or 10 of them. this way you don't have to buy more processors that are way more expensive
+    - scaling up means you get a more powerful computer, scaling out means you just get more computers of the same size
+    - node is optimized for scaling out
+- node package manager
+    - usually working with open source packages
+    - npm
+- scripts
+    - your entry points into your applications
+    - you could just write the command node and set it to do whatever
+    - but usually there's going to be a lot of entry points into your code, and you run that command seperately
+    - dependencies
+        - these are your libraries
+        - whenever you update your dependencies you ahve to run "npm i"
+            - everytime you run nmp install it creates a lock folder
+                - this lists every dependencies that your own dependencies use on and it gives every single version number of their packages,
+                - this is a failsafe for if some random package one of your dependencies use updates and breaks everything
+        - list of dependencies
+        - version control / express
+            - ^ is the latest version 
+        - downloaded into the node modules folders
+- common js module system
+    - commonjs
+    - different than the es/es6 module system
+    - different syntax
+- nodemon
+    - package that monitors a certain file path for you and if anything changes when you save it it reruns node 
+    - just so you don't have to rerun everything a million times
+    - but there's a lot of security bugs in it, you should only use it on the client
+- devDependencies
+    - a package that's not used in the application, just used in the developer's client side
+    - "dependencies i --production"
