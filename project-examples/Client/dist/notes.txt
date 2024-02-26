@@ -1,0 +1,2 @@
+- static files go in here
+- if you don't use vite to edit it goes here i think (?)
