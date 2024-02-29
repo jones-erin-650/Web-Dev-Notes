@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Random User Generator</title>
+</head>
+<body>
+    <div id="app">
+        <!-- since it's inside the app div it can use any data that's stored in app.js -->
+        <!-- this is how you call things in an img tag, you cant just use {{}}, but you can use js template literal -->
+        <!-- also don't need to use v-bind as a prefix, you can just have the colon -->
+        <img :class="gender" v-bind:src="picture" :alt="`${firstName} ${lastName}`">
+        <h1>{{firstName}} {{lastName}}</h1>
+        <h3>Email: {{email}}</h3>
+        <!-- v-binds the variable from the app.js file and makes it the button's class to apply the styles to it -->
+        <button v-on:click="getUser()" :class="gender">Get Random User</button>
+        <!-- v-:on sets an event -->
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
