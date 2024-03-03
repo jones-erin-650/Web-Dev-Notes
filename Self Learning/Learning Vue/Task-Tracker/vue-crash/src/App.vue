@@ -1,10 +1,13 @@
 <!-- root component, everything we do goes through this file, any componenet we make goes through this file -->
 <!-- components are imported into here and when they're used they're basically registered in here-->
+<!-- for now we will just put outr data in the app.vue file -->
 <template>
   <div class="container">
     <!-- this is a prop, it can be defined in the component file -->
     <Header title="Task Tracker" />
     <!-- brings in the task tracker thingy from the header file -->
+    <!-- since it's an array we want to v-bind it incase things are changed -->
+    <Tasks @delete-task="deleteTask" :tasks="tasks"/>
   </div>
   
 
@@ -14,13 +17,54 @@
 
 // importing header
 import Header from './components/Header'
+import Tasks from './components/Tasks'
 
 
 export default {
   // components are registered in here
   name: 'App',
   components: {
-    Header
+    Header,
+    Tasks
+  },
+  data() {
+    return {
+      // going to use a life cycle function, so when a piece of data is loaded it goes through these functions
+      tasks: []
+    }
+  },
+  methods: {
+    deleteTask(id) {
+      if(confirm('Are you sure?')){
+        // filter method, for each task we take back everything except the task with the id that's equal to the id we're deleting
+        this.tasks = this.tasks.filter((task) => task.id !== id)
+      }
+        
+    }
+  },
+  created() {
+    // when created runs we fill the tast array
+    // these will be passed through a task component to render it on the page
+    this.tasks = [
+      {
+        id: 1,
+        text: 'Doctors Appointment',
+        day: 'March 1st at 2:30pm',
+        reminder: true,
+      },
+      {
+        id: 2,
+        text: 'Meeting at School',
+        day: 'March 3rd at 1:30pm',
+        reminder: true,
+      },
+      {
+        id: 3,
+        text: 'Food Shopping',
+        day: 'March 3rd at 11:00am',
+        reminder: false,
+      }
+    ]
   }
 }
 </script>
