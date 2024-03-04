@@ -4,10 +4,16 @@
 <template>
   <div class="container">
     <!-- this is a prop, it can be defined in the component file -->
-    <Header title="Task Tracker" />
+    <Header @toggle-add-task="toggleAddTask" 
+    title="Task Tracker" 
+    :showAddTask="showAddTask" />
+    <div v-if="showAddTask">
+      <AddTask @add-task="addTask"/>
+    </div>
+    
     <!-- brings in the task tracker thingy from the header file -->
     <!-- since it's an array we want to v-bind it incase things are changed -->
-    <Tasks @delete-task="deleteTask" :tasks="tasks"/>
+    <Tasks @toggle-reminder="toggleReminder()" @delete-task="deleteTask" :tasks="tasks"/>
   </div>
   
 
@@ -18,6 +24,8 @@
 // importing header
 import Header from './components/Header'
 import Tasks from './components/Tasks'
+import AddTask from './components/AddTask'
+
 
 
 export default {
@@ -25,22 +33,38 @@ export default {
   name: 'App',
   components: {
     Header,
-    Tasks
+    Tasks,
+    AddTask,
   },
   data() {
     return {
       // going to use a life cycle function, so when a piece of data is loaded it goes through these functions
-      tasks: []
+      tasks: [],
+      showAddTask: false
     }
   },
   methods: {
+    toggleAddTask() {
+      this.showAddTask = !this.showAddTask
+    },
+    addTask(task) {
+      // spread across the current tasks then add a new one onto it
+      // used to expand elements from arrays
+      this.tasks = [...this.tasks, task]
+    },
     deleteTask(id) {
       if(confirm('Are you sure?')){
         // filter method, for each task we take back everything except the task with the id that's equal to the id we're deleting
         this.tasks = this.tasks.filter((task) => task.id !== id)
       }
         
-    }
+    },
+    toggleReminder(id){
+      // map allows us to manipulate an array and return an array of updated tasks
+      // if the task.id == the id we passed up from task.vue, then reminder is reversed, else just return task
+      this.tasks = this.tasks.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task)
+
+    },
   },
   created() {
     // when created runs we fill the tast array

@@ -1,6 +1,7 @@
 <template>
     <!-- if class.reminder is true, add a class reminder, else add an empty class, also has a task class by default -->
-    <div :class="[task.reminder ? 'reminder' : '', 'task']">
+    <!-- when the task is double clicked it emits an event and passes the id -->
+    <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ? 'reminder' : '', 'task']">
         <h3>
             {{task.text}}
             <i @click="onDelete(task.id)" class="fas fa-times"></i>

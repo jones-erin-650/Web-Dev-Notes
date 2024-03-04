@@ -5,7 +5,7 @@
         <div v-for="task in tasks" :key="task.id">
             <!-- instead of just using an h3 we should have a specific task.vue component we can reuse -->
             <!-- emits an event one level up -->
-            <Task @delete-task="$emit('delete-task', task.id)" :task="task"/>
+            <Task @toggle-reminder="$emit('toggle-reminder', task.id)" @delete-task="$emit('delete-task', task.id)" :task="task"/>
 
         </div>
     </div>
@@ -23,6 +23,6 @@
             Task,
         },
         // a list of events we're emitting
-        emits: ['delete-task']
+        emits: ['delete-task', 'toggle-reminder']
     }
 </script>
