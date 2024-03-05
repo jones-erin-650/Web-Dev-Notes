@@ -14,6 +14,8 @@
     <!-- brings in the task tracker thingy from the header file -->
     <!-- since it's an array we want to v-bind it incase things are changed -->
     <Tasks @toggle-reminder="toggleReminder()" @delete-task="deleteTask" :tasks="tasks"/>
+
+    <Footer />
   </div>
   
 
@@ -25,6 +27,7 @@
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
+import Footer from './components/Footer'
 
 
 
@@ -35,6 +38,7 @@ export default {
     Header,
     Tasks,
     AddTask,
+    Footer,
   },
   data() {
     return {
