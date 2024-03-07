@@ -1,21 +1,19 @@
 {
-  "name": "npm-test",
+  "name": "2024-spring",
   "version": "1.0.0",
-  "description": "following class notes",
-  "main": "index.js",
+  "description": "- Create another repo",
   "author": "",
   "license": "ISC",
-  
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon desktop/cs/-repos/web-dev-notes/project examples/server/index.js --watch server/"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js --watch server/"
   },
-
   "dependencies": {
     "dayjs": "^1.11.10",
     "express": "^4.18.2"
-  }, "devDependencies": {
+  },
+  "devDependencies": {
     "nodemon": "^3.0.3"
   }
-  
+
 }
