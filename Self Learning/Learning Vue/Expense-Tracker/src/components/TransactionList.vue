@@ -10,18 +10,18 @@
         >
       </li>
     </ul>
-  </template>
+</template>
 
-<script>
-    export default {
-        data() {
-            return {
-                transactions: [
-                { id: 1, text: 'mars soul', amount: -287.54},
-                { id: 2, text: 'idk', amount: 4543.34},
+<script setup>
 
-                ]
-            }
-        }
+//   defining the imported props
+  import { defineProps } from 'vue';
+
+  const props = defineProps({
+    transactions: {
+        type: Array,
+        required: true
     }
+  })
+
 </script>
