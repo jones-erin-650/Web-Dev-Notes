@@ -4,16 +4,15 @@
 <template>
   <div class="container">
     <!-- this is a prop, it can be defined in the component file -->
-    <Header @toggle-add-task="toggleAddTask" 
-    title="Task Tracker" 
-    :showAddTask="showAddTask" />
-    <div v-if="showAddTask">
-      <AddTask @add-task="addTask"/>
-    </div>
+    <Header 
+      @toggle-add-task="toggleAddTask" 
+      title="Task Tracker" 
+      :showAddTask="showAddTask" />
     
-    <!-- brings in the task tracker thingy from the header file -->
-    <!-- since it's an array we want to v-bind it incase things are changed -->
-    <Tasks @toggle-reminder="toggleReminder()" @delete-task="deleteTask" :tasks="tasks"/>
+    <!-- views have to be called in here -->
+    <router-view>
+      
+    </router-view>
 
     <Footer />
   </div>
@@ -25,8 +24,6 @@
 
 // importing header
 import Header from './components/Header'
-import Tasks from './components/Tasks'
-import AddTask from './components/AddTask'
 import Footer from './components/Footer'
 
 
@@ -36,14 +33,11 @@ export default {
   name: 'App',
   components: {
     Header,
-    Tasks,
-    AddTask,
     Footer,
   },
   data() {
     return {
       // going to use a life cycle function, so when a piece of data is loaded it goes through these functions
-      tasks: [],
       showAddTask: false
     }
   },

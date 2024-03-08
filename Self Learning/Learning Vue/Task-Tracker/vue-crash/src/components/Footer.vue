@@ -1,7 +1,7 @@
 <template>
     <footer>
-        <p>Copyright 2021</p>
-        <a href="/about">About</a>
+        <p>Version 1.0.0</p>
+        <router-link to="/about">About</router-link>
     </footer>
 </template>
 
