@@ -10,3 +10,16 @@
       </div>
     </div>
   </template>
+
+<script setup>
+  const props = defineProps({
+    income: {
+      type: Number,
+      required: true
+    },
+    expenses: {
+      type: Number,
+      required: true
+    }
+  })
+</script>
