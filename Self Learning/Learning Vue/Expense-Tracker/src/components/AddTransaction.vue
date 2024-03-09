@@ -35,14 +35,26 @@
   const amount = ref('')
   const toast = useToast()
 
+  // passing in a custom event we emit
+  const emit = defineEmits(['transactionSubmitted'])
+
   const onSubmit = () => {
     if(!text.value || !amount.value) {
       toast.error('Both fields must be filled');
       return
     }
 
+    const transactionData = {
+      text: text.value,
+      amount: parseFloat(amount.value)
+    }
+
+    // name of event, data taken in
+    emit('transactionSubmitted', transactionData)
+
     // clear fields
     text.value = ''
     amount.value = ''
+    
   }
 </script>

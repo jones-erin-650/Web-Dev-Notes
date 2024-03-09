@@ -2,12 +2,12 @@
   <div>
     <Header />
     <div class="container">
-      <Balance :total="total"/>
+      <Balance :total="+total"/>
       <!-- the + passes them in as numbers not strings -->
       <IncomeExpenses :income="+income" :expenses="+expenses"/>
       <!-- passing the array in as a prop -->
-      <TransactionList :transactions="transactions"/>
-      <AddTransaction />
+      <TransactionList :transactions="+transactions"/>
+      <AddTransaction @transactionSubmitted="handleTransactionSubmitted"/>
     </div>
   </div>
   
@@ -60,5 +60,22 @@
       return acc + transaction.amount
     }, 0).toFixed(2)
   } );
+
+  // add transaction after submission
+  // gets passed in the transaction data from addtransaction.vue
+  const handleTransactionSubmitted = (transactionData) => {
+    transactions.value.push({
+      id: generateUniqueId(),
+      text: transactionData.text,
+      amount: transactionData.amount
+    })
+
+    console.log(generateUniqueId)
+  }
+
+  // generate unique id
+  const generateUniqueId = () => {
+    return Math.floor(Math.random() * 1000000)
+  }
 
 </script>
